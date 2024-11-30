@@ -1,116 +1,106 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BRC Volleyball Court</title>
+  <title>Lapangan Voli BRC</title>
   <style>
-    /* Global Styles */
-    body {
+    /* Reset */
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
       font-family: Arial, sans-serif;
-      background-color: #f9f9f9;
+      background-color: #f5f5f5;
       color: #333;
     }
     header {
-      background: linear-gradient(90deg, #e63946, #6a0572);
-      color: white;
-      padding: 20px 0;
-      text-align: center;
+      background-color: #ff0000; /* Merah khas Indonesia */
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
-    header h1 {
-      margin: 0;
-      font-size: 2.5em;
-    }
-    header p {
-      font-size: 1.2em;
+    header img {
+      width: 50px;
+      height: 50px;
+      cursor: pointer;
     }
     nav {
-      background-color: #6a0572;
       display: flex;
-      justify-content: center;
-      padding: 10px;
+      gap: 15px;
     }
     nav a {
       color: white;
       text-decoration: none;
-      margin: 0 15px;
-      font-weight: bold;
-      font-size: 1.1em;
+      font-size: 16px;
+      padding: 8px 12px;
     }
     nav a:hover {
-      color: #e63946;
+      background-color: white;
+      color: #ff0000;
+      border-radius: 4px;
     }
-    section {
-      padding: 20px;
+    .hero {
+      text-align: center;
+      background: url('https://via.placeholder.com/1200x400') no-repeat center center/cover;
+      color: white;
+      padding: 60px 20px;
+    }
+    .hero h1 {
+      font-size: 3em;
+    }
+    .container {
       max-width: 1200px;
-      margin: auto;
+      margin: 20px auto;
+      padding: 0 20px;
     }
     .card {
       background: white;
-      border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      margin: 20px 0;
       padding: 20px;
+      margin: 10px 0;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
-    .card h2 {
-      margin-top: 0;
-      color: #e63946;
-    }
-    footer {
-      background: #333;
-      color: white;
-      text-align: center;
-      padding: 15px 0;
-    }
-
-    /* Schedule Table */
-    .schedule-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 20px;
-    }
-    .schedule-table th, .schedule-table td {
-      border: 1px solid #ddd;
-      text-align: center;
-      padding: 10px;
-    }
-    .schedule-table th {
-      background: #e63946;
-      color: white;
-    }
-
-    /* Member Statistics */
-    .stats {
+    .schedule, .statistics {
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-around;
+      gap: 20px;
     }
-    .stat-card {
-      flex: 1 1 calc(33.33% - 40px);
-      background: white;
-      margin: 10px;
-      border-radius: 10px;
+    .schedule-item, .stat-item {
+      flex: 1 1 calc(50% - 20px);
+      background-color: #ffe5e5;
+      padding: 15px;
+      border-radius: 8px;
+    }
+    .schedule-item h3, .stat-item h3 {
+      margin-bottom: 10px;
+    }
+    footer {
       text-align: center;
       padding: 15px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      background-color: #333;
+      color: white;
+      margin-top: 20px;
     }
-    .stat-card h3 {
-      color: #6a0572;
+    footer a {
+      color: #ff0000;
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
     }
 
-    /* Responsive Design */
+    /* Responsif */
     @media (max-width: 768px) {
-      nav a {
-        font-size: 0.9em;
-      }
-      .stat-card {
-        flex: 1 1 calc(50% - 20px);
-      }
-    }
-    @media (max-width: 480px) {
-      .stat-card {
+      .schedule-item, .stat-item {
         flex: 1 1 100%;
+      }
+      nav {
+        flex-wrap: wrap;
+        justify-content: center;
       }
     }
   </style>
@@ -118,81 +108,75 @@
 <body>
 
 <header>
-  <h1>BRC Volleyball Court</h1>
-  <p>Spirit, Strength, and Community</p>
+  <!-- Logo Kiri -->
+  <img src="https://via.placeholder.com/50" alt="Logo BRC" onclick="alert('Selamat datang di Lapangan Voli BRC!')">
+  
+  <!-- Navbar -->
+  <nav>
+    <a href="#home">Beranda</a>
+    <a href="#jadwal">Jadwal Latihan</a>
+    <a href="#statistik">Statistik</a>
+    <a href="#kontak">Kontak</a>
+  </nav>
+  
+  <!-- Logo Kanan -->
+  <img src="https://via.placeholder.com/50" alt="Klik untuk Info" onclick="window.open('https://example.com', '_blank')">
 </header>
 
-<nav>
-  <a href="#home">Home</a>
-  <a href="#schedule">Training Schedule</a>
-  <a href="#stats">Member Stats</a>
-</nav>
-
-<section id="home">
-  <div class="card">
-    <h2>Welcome to BRC Volleyball Court</h2>
-    <p>Our volleyball court is a hub for sportsmanship and community spirit. Join us to train, compete, and celebrate the love of volleyball!</p>
-  </div>
+<section class="hero" id="home">
+  <h1>Lapangan Voli BRC</h1>
+  <p>Tempat Berkumpul Para Pecinta Voli Indonesia</p>
 </section>
 
-<section id="schedule">
-  <div class="card">
-    <h2>Training Schedule</h2>
-    <table class="schedule-table">
-      <thead>
-        <tr>
-          <th>Day</th>
-          <th>Time</th>
-          <th>Activity</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Monday</td>
-          <td>5:00 PM - 7:00 PM</td>
-          <td>Beginner Training</td>
-        </tr>
-        <tr>
-          <td>Wednesday</td>
-          <td>6:00 PM - 8:00 PM</td>
-          <td>Team Practice</td>
-        </tr>
-        <tr>
-          <td>Friday</td>
-          <td>5:00 PM - 7:00 PM</td>
-          <td>Advanced Drills</td>
-        </tr>
-        <tr>
-          <td>Saturday</td>
-          <td>4:00 PM - 6:00 PM</td>
-          <td>Friendly Matches</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</section>
-
-<section id="stats">
-  <div class="card">
-    <h2>Member Statistics</h2>
-    <div class="stats">
-      <div class="stat-card">
-        <h3>Total Members</h3>
-        <p>120</p>
-      </div>
-      <div class="stat-card">
-        <h3>Active Players</h3>
-        <p>80</p>
-      </div>
-      <div class="stat-card">
-        <h3>Junior Members</h3>
-        <p>40</p>
-      </div>
+<div class="container" id="jadwal">
+  <h2>Jadwal Latihan</h2>
+  <div class="schedule">
+    <div class="schedule-item">
+      <h3>Senin & Kamis</h3>
+      <p>18:00 - 20:00 WIB</p>
+      <p>Kategori: Pemula</p>
+    </div>
+    <div class="schedule-item">
+      <h3>Selasa & Jumat</h3>
+      <p>19:00 - 21:00 WIB</p>
+      <p>Kategori: Lanjutan</p>
     </div>
   </div>
+</div>
+
+<div class="container" id="statistik">
+  <h2>Statistik Member</h2>
+  <div class="statistics">
+    <div class="stat-item">
+      <h3>Total Anggota</h3>
+      <p>150 orang</p>
+    </div>
+    <div class="stat-item">
+      <h3>Tim Terbentuk</h3>
+      <p>12 tim</p>
+    </div>
+    <div class="stat-item">
+      <h3>Turnamen Dimenangkan</h3>
+      <p>5 kejuaraan</p>
+    </div>
+    <div class="stat-item">
+      <h3>Latihan Per Minggu</h3>
+      <p>8 sesi</p>
+    </div>
+  </div>
+</div>
+
+<section class="container" id="kontak">
+  <h2>Kontak Kami</h2>
+  <div class="card">
+    <p>Email: brcvolley@gmail.com</p>
+    <p>Telepon: +62 812 3456 7890</p>
+    <p>Alamat: Jl. Sport Center No. 99, Jakarta</p>
+  </div>
 </section>
+
 <footer>
-  <p>&copy; 2024 BRC Volleyball Court. All rights reserved.</p>
+  <p>&copy; 2024 Lapangan Voli BRC. All rights reserved. <a href="#">Kebijakan Privasi</a></p>
 </footer>
 
 </body>
