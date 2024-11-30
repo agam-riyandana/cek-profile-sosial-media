@@ -5,188 +5,192 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BRC Volleyball Court</title>
   <style>
+    /* Global Styles */
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      padding: 0;
-      background-color: #f4f4f4;
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
       color: #333;
     }
     header {
-      background-color: #007BFF;
+      background: linear-gradient(90deg, #e63946, #6a0572);
       color: white;
-      text-align: center;
       padding: 20px 0;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+    header p {
+      font-size: 1.2em;
     }
     nav {
-      background-color: #0056b3;
+      background-color: #6a0572;
       display: flex;
       justify-content: center;
+      padding: 10px;
     }
     nav a {
       color: white;
-      padding: 14px 20px;
       text-decoration: none;
-      text-align: center;
+      margin: 0 15px;
+      font-weight: bold;
+      font-size: 1.1em;
     }
     nav a:hover {
-      background-color: #004494;
+      color: #e63946;
     }
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
+    section {
       padding: 20px;
+      max-width: 1200px;
+      margin: auto;
     }
     .card {
       background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       margin: 20px 0;
       padding: 20px;
-      border-radius: 5px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 20px 0;
-    }
-    table th, table td {
-      border: 1px solid #ddd;
-      padding: 10px;
-      text-align: center;
-    }
-    table th {
-      background-color: #007BFF;
-      color: white;
+    .card h2 {
+      margin-top: 0;
+      color: #e63946;
     }
     footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+    }
+
+    /* Schedule Table */
+    .schedule-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    .schedule-table th, .schedule-table td {
+      border: 1px solid #ddd;
       text-align: center;
       padding: 10px;
-      background-color: #0056b3;
+    }
+    .schedule-table th {
+      background: #e63946;
       color: white;
-      margin-top: 20px;
+    }
+
+    /* Member Statistics */
+    .stats {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+    .stat-card {
+      flex: 1 1 calc(33.33% - 40px);
+      background: white;
+      margin: 10px;
+      border-radius: 10px;
+      text-align: center;
+      padding: 15px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .stat-card h3 {
+      color: #6a0572;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      nav a {
+        font-size: 0.9em;
+      }
+      .stat-card {
+        flex: 1 1 calc(50% - 20px);
+      }
+    }
+    @media (max-width: 480px) {
+      .stat-card {
+        flex: 1 1 100%;
+      }
     }
   </style>
 </head>
 <body>
 
 <header>
-  <h1>Welcome to BRC Volleyball Court</h1>
-  <p>Your hub for training, competition, and fun</p>
+  <h1>BRC Volleyball Court</h1>
+  <p>Spirit, Strength, and Community</p>
 </header>
 
 <nav>
   <a href="#home">Home</a>
   <a href="#schedule">Training Schedule</a>
-  <a href="#members">Member Statistics</a>
-  <a href="#contact">Contact</a>
+  <a href="#stats">Member Stats</a>
 </nav>
 
-<section id="home" class="container">
-  <h2>About BRC Volleyball Court</h2>
+<section id="home">
   <div class="card">
-    <p>The BRC Volleyball Court is the heart of our community's volleyball scene. We provide training, host tournaments, and build a strong, competitive spirit among players.</p>
-    <p>Join us for regular training sessions and improve your skills with our expert coaches.</p>
+    <h2>Welcome to BRC Volleyball Court</h2>
+    <p>Our volleyball court is a hub for sportsmanship and community spirit. Join us to train, compete, and celebrate the love of volleyball!</p>
   </div>
 </section>
 
-<section id="schedule" class="container">
-  <h2>Training Schedule</h2>
+<section id="schedule">
   <div class="card">
-    <table>
+    <h2>Training Schedule</h2>
+    <table class="schedule-table">
       <thead>
         <tr>
           <th>Day</th>
           <th>Time</th>
-          <th>Category</th>
-          <th>Coach</th>
+          <th>Activity</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td>Monday</td>
-          <td>6:00 PM - 8:00 PM</td>
-          <td>Beginners</td>
-          <td>Coach Andi</td>
+          <td>5:00 PM - 7:00 PM</td>
+          <td>Beginner Training</td>
         </tr>
         <tr>
           <td>Wednesday</td>
           <td>6:00 PM - 8:00 PM</td>
-          <td>Intermediate</td>
-          <td>Coach Rina</td>
+          <td>Team Practice</td>
         </tr>
         <tr>
           <td>Friday</td>
-          <td>6:00 PM - 8:00 PM</td>
-          <td>Advanced</td>
-          <td>Coach Budi</td>
+          <td>5:00 PM - 7:00 PM</td>
+          <td>Advanced Drills</td>
         </tr>
         <tr>
           <td>Saturday</td>
           <td>4:00 PM - 6:00 PM</td>
-          <td>All Levels (Practice Match)</td>
-          <td>Coach Team</td>
+          <td>Friendly Matches</td>
         </tr>
       </tbody>
     </table>
   </div>
 </section>
 
-<section id="members" class="container">
-  <h2>Member Statistics</h2>
+<section id="stats">
   <div class="card">
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Age</th>
-          <th>Skill Level</th>
-          <th>Matches Played</th>
-          <th>Wins</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Alice</td>
-          <td>22</td>
-          <td>Intermediate</td>
-          <td>15</td>
-          <td>8</td>
-        </tr>
-        <tr>
-          <td>Bob</td>
-          <td>25</td>
-          <td>Advanced</td>
-          <td>30</td>
-          <td>20</td>
-        </tr>
-        <tr>
-          <td>Clara</td>
-          <td>19</td>
-          <td>Beginner</td>
-          <td>5</td>
-          <td>2</td>
-        </tr>
-        <tr>
-          <td>David</td>
-          <td>28</td>
-          <td>Advanced</td>
-          <td>40</td>
-          <td>25</td>
-        </tr>
-      </tbody>
-    </table>
+    <h2>Member Statistics</h2>
+    <div class="stats">
+      <div class="stat-card">
+        <h3>Total Members</h3>
+        <p>120</p>
+      </div>
+      <div class="stat-card">
+        <h3>Active Players</h3>
+        <p>80</p>
+      </div>
+      <div class="stat-card">
+        <h3>Junior Members</h3>
+        <p>40</p>
+      </div>
+    </div>
   </div>
 </section>
-
-<section id="contact" class="container">
-  <h2>Contact Us</h2>
-  <div class="card">
-    <p>Address: BRC Volleyball Court, Main Street, Your Town</p>
-    <p>Email: brcvolleyball@community.com</p>
-    <p>Phone: +62-123-456-789</p>
-  </div>
-</section>
-
 <footer>
   <p>&copy; 2024 BRC Volleyball Court. All rights reserved.</p>
 </footer>
